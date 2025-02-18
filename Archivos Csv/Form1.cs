@@ -23,9 +23,11 @@ namespace Archivos_Csv
 
                 dtvcsv.Columns.Clear();
                 string[] encabezados = lineas[0].Split(',');
-                foreach (var titulo in encabezados)
+
+                for (int j = 0; j < encabezados.Length; j++)
                 {
-                    dtvcsv.Columns.Add(titulo.Trim(), titulo.Trim());
+                    string titulo = encabezados[j].Trim();
+                    dtvcsv.Columns.Add(titulo, titulo);
                 }
 
                 for (int i = 1; i < lineas.Length; i++)
