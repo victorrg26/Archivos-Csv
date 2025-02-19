@@ -51,43 +51,39 @@ namespace Archivos_Csv
 
         private void dtpfechanac_ValueChanged(object sender, EventArgs e)
         {
-            string curp = txtCurp.Text.Trim(); // Obtener nuevamente la CURP
+            string curp = txtCurp.Text.Trim(); 
 
             if (curp.Length < 18)
             {
-                return; // No hacer nada si la CURP es incorrecta
+                return; 
             }
 
-            // Extraer los valores al inicio
-            string fecha = curp.Substring(4, 6); // AAMMDD
+            
+            string fecha = curp.Substring(4, 6); 
             string sexo = curp.Substring(10, 1);
             string estado = curp.Substring(11, 2);
 
-            // Convertir la fecha de nacimiento al formato DD/MM/AAAA
             string anio = fecha.Substring(0, 2);
             string mes = fecha.Substring(2, 2);
             string dia = fecha.Substring(4, 2);
 
-            // Determinar el siglo (19XX o 20XX)
             int anioInt = int.Parse(anio);
             string anioCompleto = anioInt >= 30 ? "19" + anio : "20" + anio;
 
-            // Formatear la fecha correctamente
+            
             string fechaNacimiento = $"{dia}/{mes}/{anioCompleto}";
 
-            // Determinar el género sin usar .ToUpper()
             string genero = (sexo == "H" || sexo == "h") ? "Hombre" : "Mujer";
 
-            // Mostrar los datos extraídos
+            
             MessageBox.Show($"Fecha de nacimiento: {fechaNacimiento}\nSexo: {genero}\nEstado: {estado}",
                 "Información de la CURP", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void btncurp_Click(object sender, EventArgs e)
         {
-            string curp = txtCurp.Text.Trim(); // Elimina espacios en blanco
+            string curp = txtCurp.Text.Trim(); 
 
-            // Validar que la CURP tenga al menos 18 caracteres
             if (curp.Length < 18)
             {
                 MessageBox.Show("La CURP ingresada es incorrecta o incompleta.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -96,21 +92,18 @@ namespace Archivos_Csv
 
             try
             {
-                // Extraer datos de la CURP
-                string fecha = curp.Substring(4, 6); // AAMMDD
+                string fecha = curp.Substring(4, 6); 
                 string sexo = curp.Substring(10, 1);
                 string estado = curp.Substring(11, 2);
 
-                // Convertir la fecha de nacimiento al formato DD/MM/AAAA
                 string anio = fecha.Substring(0, 2);
                 string mes = fecha.Substring(2, 2);
                 string dia = fecha.Substring(4, 2);
 
-                // Determinar el siglo (19XX o 20XX)
                 int anioInt = int.Parse(anio);
                 string anioCompleto = anioInt >= 30 ? "19" + anio : "20" + anio;
 
-                // Establecer la fecha de nacimiento en el DateTimePicker (esto dispara ValueChanged)
+                
                 dtpfechanac.Value = new DateTime(int.Parse(anioCompleto), int.Parse(mes), int.Parse(dia));
             }
             catch (Exception ex)
