@@ -63,15 +63,15 @@ namespace Archivos_Csv
             string sexo = curp.Substring(10, 1);
             string estado = curp.Substring(11, 2);
 
-            string anio = fecha.Substring(0, 2);
+            string año = fecha.Substring(0, 2);
             string mes = fecha.Substring(2, 2);
             string dia = fecha.Substring(4, 2);
 
-            int anioInt = int.Parse(anio);
-            string anioCompleto = anioInt >= 30 ? "19" + anio : "20" + anio;
+            int añoInt = int.Parse(año);
+            string añoCompleto = añoInt >= 30 ? "19" + año : "20" + año;
 
             
-            string fechaNacimiento = $"{dia}/{mes}/{anioCompleto}";
+            string fechaNacimiento = $"{dia}/{mes}/{añoCompleto}";
 
             string genero = (sexo == "H" || sexo == "h") ? "Hombre" : "Mujer";
 
@@ -96,15 +96,15 @@ namespace Archivos_Csv
                 string sexo = curp.Substring(10, 1);
                 string estado = curp.Substring(11, 2);
 
-                string anio = fecha.Substring(0, 2);
+                string año = fecha.Substring(0, 2);
                 string mes = fecha.Substring(2, 2);
                 string dia = fecha.Substring(4, 2);
 
-                int anioInt = int.Parse(anio);
-                string anioCompleto = anioInt >= 30 ? "19" + anio : "20" + anio;
+                int añoInt = int.Parse(año);
+                string añoCompleto = añoInt >= 30 ? "19" + año : "20" + año;
 
                 
-                dtpfechanac.Value = new DateTime(int.Parse(anioCompleto), int.Parse(mes), int.Parse(dia));
+                dtpfechanac.Value = new DateTime(int.Parse(añoCompleto), int.Parse(mes), int.Parse(dia));
             }
             catch (Exception ex)
             {
