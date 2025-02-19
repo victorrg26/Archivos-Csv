@@ -50,6 +50,12 @@ namespace Archivos_Csv
         {
 
         }
+
+        private void fechasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrnVarios fechas = new FrnVarios();
+            fechas.Show();
+        }
     }
 }
     

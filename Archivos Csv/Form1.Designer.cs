@@ -32,15 +32,17 @@
             btncsv = new Button();
             openFileDialogcsv = new OpenFileDialog();
             tableLayoutPanel1 = new TableLayoutPanel();
+            menuStrip1 = new MenuStrip();
+            fechasToolStripMenuItem = new ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)dtvcsv).BeginInit();
             tableLayoutPanel1.SuspendLayout();
+            menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // dtvcsv
             // 
             dtvcsv.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dtvcsv.Dock = DockStyle.Fill;
-            dtvcsv.Location = new Point(3, 3);
+            dtvcsv.Location = new Point(3, 31);
             dtvcsv.Name = "dtvcsv";
             dtvcsv.RowHeadersWidth = 51;
             dtvcsv.Size = new Size(947, 310);
@@ -50,7 +52,7 @@
             // btncsv
             // 
             btncsv.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            btncsv.Location = new Point(3, 338);
+            btncsv.Location = new Point(3, 353);
             btncsv.Name = "btncsv";
             btncsv.Size = new Size(947, 29);
             btncsv.TabIndex = 1;
@@ -66,15 +68,34 @@
             // 
             tableLayoutPanel1.ColumnCount = 1;
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            tableLayoutPanel1.Controls.Add(dtvcsv, 0, 0);
-            tableLayoutPanel1.Controls.Add(btncsv, 0, 1);
+            tableLayoutPanel1.Controls.Add(btncsv, 0, 2);
+            tableLayoutPanel1.Controls.Add(dtvcsv, 0, 1);
+            tableLayoutPanel1.Controls.Add(menuStrip1, 0, 0);
             tableLayoutPanel1.Location = new Point(3, 1);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
-            tableLayoutPanel1.RowCount = 2;
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 81.14754F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 18.852459F));
+            tableLayoutPanel1.RowCount = 3;
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 8.130081F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 91.86992F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 43F));
             tableLayoutPanel1.Size = new Size(953, 390);
             tableLayoutPanel1.TabIndex = 3;
+            // 
+            // menuStrip1
+            // 
+            menuStrip1.ImageScalingSize = new Size(20, 20);
+            menuStrip1.Items.AddRange(new ToolStripItem[] { fechasToolStripMenuItem });
+            menuStrip1.Location = new Point(0, 0);
+            menuStrip1.Name = "menuStrip1";
+            menuStrip1.Size = new Size(953, 28);
+            menuStrip1.TabIndex = 2;
+            menuStrip1.Text = "menuStrip1";
+            // 
+            // fechasToolStripMenuItem
+            // 
+            fechasToolStripMenuItem.Name = "fechasToolStripMenuItem";
+            fechasToolStripMenuItem.Size = new Size(67, 24);
+            fechasToolStripMenuItem.Text = "Fechas";
+            fechasToolStripMenuItem.Click += fechasToolStripMenuItem_Click;
             // 
             // Form1
             // 
@@ -82,10 +103,14 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(956, 396);
             Controls.Add(tableLayoutPanel1);
+            MainMenuStrip = menuStrip1;
             Name = "Form1";
             Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)dtvcsv).EndInit();
             tableLayoutPanel1.ResumeLayout(false);
+            tableLayoutPanel1.PerformLayout();
+            menuStrip1.ResumeLayout(false);
+            menuStrip1.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -95,5 +120,7 @@
         private Button btncsv;
         private OpenFileDialog openFileDialogcsv;
         private TableLayoutPanel tableLayoutPanel1;
+        private MenuStrip menuStrip1;
+        private ToolStripMenuItem fechasToolStripMenuItem;
     }
 }
